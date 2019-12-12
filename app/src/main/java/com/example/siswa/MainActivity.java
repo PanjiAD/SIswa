@@ -3,6 +3,8 @@ package com.example.siswa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,5 +12,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Membaca file menu dan menambahkan isinya ke action bar jika ada.
+        getMenuInflater().inflate(R.menu.activity_menu, menu);
+        return true;
+    }
+
+    public void onComposeAction(MenuItem mi) {
+        setContentView(R.layout.activity_setting);
+    }
+
+    private void composeMessage() {
     }
 }
