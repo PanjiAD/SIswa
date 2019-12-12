@@ -26,7 +26,4 @@ public class MainActivity extends AppCompatActivity {
     public void onComposeAction(MenuItem mi) {
         setContentView(R.layout.activity_setting);
     }
-
-    private void composeMessage() {
-    }
 }
