@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "367141917331",
+    "firebase_url": "https://siswa-6f3f2.firebaseio.com",
+    "project_id": "siswa-6f3f2",
+    "storage_bucket": "siswa-6f3f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367141917331:android:ec9f79d9249a0b61663366",
+        "android_client_info": {
+          "package_name": "com.example.siswa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367141917331-rpomvrkderq9k33gm7unnuse3sfeficf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.siswa",
+            "certificate_hash": "6b81a4d28db50d030c2a2a19a38096e338750a67"
+          }
+        },
+        {
+          "client_id": "367141917331-o8i6495e9n5arn7gj1fk8ni22e7moi3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6h_WX3moVWXUBLYNxLGmlOsP7ArcmPUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367141917331-o8i6495e9n5arn7gj1fk8ni22e7moi3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
