@@ -1,8 +1,10 @@
-package com.example.siswa;
+package com.example.siswa.activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.siswa.R;
 
 public class MainActivity extends AppCompatActivity {
 

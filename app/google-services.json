@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "367141917331",
-    "firebase_url": "https://siswa-6f3f2.firebaseio.com",
-    "project_id": "siswa-6f3f2",
-    "storage_bucket": "siswa-6f3f2.appspot.com"
+    "project_number": "442810108131",
+    "firebase_url": "https://database-siswa-4ae7e.firebaseio.com",
+    "project_id": "database-siswa-4ae7e",
+    "storage_bucket": "database-siswa-4ae7e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:367141917331:android:ec9f79d9249a0b61663366",
+        "mobilesdk_app_id": "1:442810108131:android:36996ff796ad5e34125dd6",
         "android_client_info": {
           "package_name": "com.example.siswa"
         }
       },
       "oauth_client": [
         {
-          "client_id": "367141917331-rpomvrkderq9k33gm7unnuse3sfeficf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.siswa",
-            "certificate_hash": "6b81a4d28db50d030c2a2a19a38096e338750a67"
-          }
-        },
-        {
-          "client_id": "367141917331-o8i6495e9n5arn7gj1fk8ni22e7moi3s.apps.googleusercontent.com",
+          "client_id": "442810108131-k3g3u2pd5ejk5e30c11q8m2q4goj8eha.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD6h_WX3moVWXUBLYNxLGmlOsP7ArcmPUI"
+          "current_key": "AIzaSyBVRlqiuMoNLLETkMFUjf1og8YkmxSpq9A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "367141917331-o8i6495e9n5arn7gj1fk8ni22e7moi3s.apps.googleusercontent.com",
+              "client_id": "442810108131-k3g3u2pd5ejk5e30c11q8m2q4goj8eha.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
