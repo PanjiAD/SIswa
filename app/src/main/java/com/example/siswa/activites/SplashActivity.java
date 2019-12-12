@@ -1,4 +1,4 @@
-package com.example.siswa.activities;
+package com.example.siswa.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,6 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.siswa.MainActivity;
 import com.example.siswa.R;
 
 public class SplashActivity extends AppCompatActivity {
