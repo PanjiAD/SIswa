@@ -6,6 +6,7 @@
     <color name="btnPrimary">#f39c12</color>
     <color name="whiteColor">#fafafa</color>
     <color name="blackColor">#1d1d1d</color>
+    <color name="warnaAnak">#336e7b</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#1d1d1d</color>
@@ -29,5 +30,4 @@
         <item>@color/dot_dark_screen2</item>
         <item>@color/dot_dark_screen3</item>
     </array>
-    <color name="warnaAnak">#f1c40f</color>
 </resources>
