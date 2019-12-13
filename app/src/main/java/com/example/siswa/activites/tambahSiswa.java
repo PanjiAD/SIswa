@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,8 +17,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.siswa.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -86,18 +90,33 @@ public class tambahSiswa extends AppCompatActivity {
         nisnStr = nisnInput.getText().toString();
         hpStr = hpInput.getText().toString();
         alamatStr = alamatInput.getText().toString();
-        System.out.println("ini nama " + namaStr);
-        System.out.println("ini email " + emailStr);
-        System.out.println("ini nisn " + nisnStr);
-        System.out.println("ini hp " + hpStr);
-        System.out.println("ini alamat " + alamatStr);
 
-        DatabaseReference newData = mDatabase.child("dataSiswa").push();
-        newData.child("nama").setValue(namaStr);
-        newData.child("email").setValue(emailStr);
-        newData.child("nisn").setValue(nisnStr);
-        newData.child("hp").setValue(hpStr);
-        newData.child("alamat").setValue(alamatStr);
+        final Notification.Builder builder = new Notification.Builder(tambahSiswa.this)
+                .setTicker("TickerTitle")
+                .setContentTitle("Data Siswa")
+                .setContentText("Data siswa berhasil ditambahkan")
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.drawable.ic_launcher_background);
+
+        if (!namaStr.isEmpty() && !emailStr.isEmpty() && !nisnStr.isEmpty() && !hpStr.isEmpty() && !alamatStr.isEmpty()){
+            DatabaseReference newData = mDatabase.child("dataSiswa").push();
+            newData.child("nama").setValue(namaStr);
+            newData.child("email").setValue(emailStr);
+            newData.child("nisn").setValue(nisnStr);
+            newData.child("hp").setValue(hpStr);
+            newData.child("alamat").setValue(alamatStr).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+
+                    NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+                    nm.notify(0, builder.build());
+
+                }
+            });
+        }
+        else {
+            Toast.makeText(this, "Data Gagal Ditambahkan", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void addBottomDots(int currentPage) {
