@@ -1,19 +1,27 @@
 package com.example.siswa;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.siswa.activites.lihatSiswa;
+import com.example.siswa.activites.lihat_detail_siswa;
+import com.example.siswa.activites.tambahSiswa;
 
 import java.util.ArrayList;
 
 public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaRecyclerView.ViewHolder> {
 
-    private ArrayList<Siswa> daftarSiswa;
     private Context context;
+    private ArrayList<Siswa> daftarSiswa;
+    FirebaseDataListener listener;
 
     public AdapterSiswaRecyclerView(ArrayList<Siswa> siswas, Context ctx){
         /**
@@ -21,6 +29,7 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
          */
         daftarSiswa = siswas;
         context = ctx;
+        listener = (lihatSiswa)ctx;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -55,20 +64,51 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
          *  Menampilkan data pada view
          */
         final String name = daftarSiswa.get(position).getNama();
+        System.out.println("Siswa Data one by one "+position+daftarSiswa.size());
         holder.tvTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /**
-                 *  Kodingan untuk tutorial Selanjutnya :p Read detail data
+                 *  Kodingan untuk tutorial <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"></span>Read detail data
                  */
+                context.startActivity(lihat_detail_siswa.getActIntent((Activity) context).putExtra("dataSiswa", daftarSiswa.get(position)));
             }
         });
         holder.tvTitle.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 /**
-                 *  Kodingan untuk tutorial Selanjutnya :p Delete dan update data
+                 *  Kodingan untuk tutorial delete dan update data
                  */
+                final Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.dialog_view);
+                dialog.setTitle("Pilih Aksi");
+                dialog.show();
+
+                Button editButton = (Button) dialog.findViewById(R.id.bt_edit_data);
+                Button delButton = (Button) dialog.findViewById(R.id.bt_delete_data);
+
+                //apabila tombol edit diklik
+                editButton.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                                context.startActivity(tambahSiswa.getActIntent((Activity) context).putExtra("dataSiswa", daftarSiswa.get(position)));
+                            }
+                        }
+                );
+
+                //apabila tombol delete diklik
+                delButton.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                                listener.onDeleteData(daftarSiswa.get(position), position);
+                            }
+                        }
+                );
                 return true;
             }
         });
@@ -83,4 +123,7 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
         return daftarSiswa.size();
     }
 
+    public interface FirebaseDataListener{
+        void onDeleteData(Siswa barang, int position);
+    }
 }

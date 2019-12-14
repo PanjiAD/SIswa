@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.siswa.AdapterSiswaRecyclerView;
 import com.example.siswa.R;
 import com.example.siswa.Siswa;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class lihatSiswa extends AppCompatActivity{
+public class lihatSiswa extends AppCompatActivity implements AdapterSiswaRecyclerView.FirebaseDataListener{
 
     private DatabaseReference database;
     private RecyclerView rvView;
@@ -99,5 +101,24 @@ public class lihatSiswa extends AppCompatActivity{
 
     public static Intent getActIntent(Activity activity){
         return new Intent(activity, lihatSiswa.class);
+    }
+
+    @Override
+    public void onDeleteData(Siswa barang, final int position) {
+        /**
+         * Kode ini akan dipanggil ketika method onDeleteData
+         * dipanggil dari adapter lewat interface.
+         * Yang kemudian akan mendelete data di Firebase Realtime DB
+         * berdasarkan key barang.
+         * Jika sukses akan memunculkan Toast
+         */
+        if(database!=null){database.child("dataSiswa").child(barang.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(lihatSiswa.this,"success delete", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        }
     }
 }

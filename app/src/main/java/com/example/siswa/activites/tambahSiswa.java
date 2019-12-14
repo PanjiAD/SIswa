@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.siswa.R;
+import com.example.siswa.Siswa;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -64,24 +66,87 @@ public class tambahSiswa extends AppCompatActivity {
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
+        final Siswa siswa = (Siswa) getIntent().getSerializableExtra("dataSiswa");
 
+        if(siswa != null){
+            btnNext.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // checking for last page
+                    // if last page home screen will be launched
+                    int current = getItem(+1);
+                    if (current < layouts.length) {
+                        // move to next screen
+                        viewPager.setCurrentItem(current);
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // checking for last page
-                // if last page home screen will be launched
-                int current = getItem(+1);
-                if (current < layouts.length) {
-                    // move to next screen
-                    viewPager.setCurrentItem(current);
+                    } else {
+                        siswa.setNama(namaInput.getText().toString());
+                        siswa.setEmail(emailInput.getText().toString());
+                        siswa.setNisn(nisnInput.getText().toString());
+                        siswa.setHp(hpInput.getText().toString());
+                        siswa.setAlamat(alamatInput.getText().toString());
 
-                } else {
-                    launchHomeScreen();
-                    addData();
+                        launchHomeScreen();
+                        updateData(siswa);
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            btnNext.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // checking for last page
+                    // if last page home screen will be launched
+                    int current = getItem(+1);
+                    if (current < layouts.length) {
+                        // move to next screen
+                        viewPager.setCurrentItem(current);
+
+                    } else {
+                        launchHomeScreen();
+                        addData();
+                    }
+                }
+            });
+        }
+    }
+
+    private void updateData(Siswa siswa){
+        namaStr = namaInput.getText().toString();
+        emailStr = emailInput.getText().toString();
+        nisnStr = nisnInput.getText().toString();
+        hpStr = hpInput.getText().toString();
+        alamatStr = alamatInput.getText().toString();
+
+        final Notification.Builder builder = new Notification.Builder(tambahSiswa.this)
+                .setTicker("TickerTitle")
+                .setContentTitle("Data Siswa")
+                .setContentText("Data siswa berhasil dirubah")
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.drawable.ic_launcher_background);
+
+        if (!namaStr.isEmpty() && !emailStr.isEmpty() && !nisnStr.isEmpty() && !hpStr.isEmpty() && !alamatStr.isEmpty()){
+        System.out.println(siswa.getKey());
+        System.out.println(siswa.getNama());
+        System.out.println(siswa);
+            mDatabase.child("dataSiswa") //akses parent index, ibaratnya seperti nama tabel
+                    .child(siswa.getKey()) //select barang berdasarkan key
+                    .setValue(siswa) //set value barang yang baru
+                    .addOnSuccessListener(this, new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            /**
+                             * Baris kode yang akan dipanggil apabila proses update barang sukses
+                             */
+                            NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+                            nm.notify(0, builder.build());
+                        }
+                    });
+        }
+        else {
+            Toast.makeText(this, "Data Gagal Dirubah", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     private void addData(){
@@ -158,11 +223,9 @@ public class tambahSiswa extends AppCompatActivity {
             if (position == layouts.length - 1) {
                 // last page. make button text to GOT IT
                 btnNext.setText(getString(R.string.finish));
-//                btnSkip.setVisibility(View.GONE);
             } else {
                 // still pages are left
                 btnNext.setText(getString(R.string.next));
-//                btnSkip.setVisibility(View.VISIBLE);
             }
         }
 
@@ -182,6 +245,7 @@ public class tambahSiswa extends AppCompatActivity {
      */
     public class MyViewPagerAdapter extends PagerAdapter {
         private LayoutInflater layoutInflater;
+        final Siswa siswa = (Siswa) getIntent().getSerializableExtra("dataSiswa");
 
         public MyViewPagerAdapter() {
         }
@@ -195,17 +259,30 @@ public class tambahSiswa extends AppCompatActivity {
             if (layouts[position]== R.layout.fragment_data1){
                 namaInput = view.findViewById(R.id.nama_text);
                 emailInput = view.findViewById(R.id.email_text);
+
+                if(siswa != null){
+                    namaInput.setText(siswa.getNama());
+                    emailInput.setText(siswa.getEmail());
+                }
             }
 
             if (layouts[position]==R.layout.fragment_data2){
                 nisnInput = view.findViewById(R.id.nisn_text);
                 hpInput = view.findViewById(R.id.hp_text);
+
+                if (siswa != null){
+                    nisnInput.setText(siswa.getNisn());
+                    hpInput.setText(siswa.getHp());
+                }
             }
 
             if (layouts[position]==R.layout.fragment_data3){
                 alamatInput = view.findViewById(R.id.alamat_text);
+
+                if (siswa != null){
+                    alamatInput.setText(siswa.getAlamat());
+                }
             }
-//            System.out.println("ini view ke"+layouts[position] +" = "+ view);
 
             return view;
         }
@@ -226,5 +303,10 @@ public class tambahSiswa extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
+    }
+
+    public static Intent getActIntent(Activity activity) {
+        // kode untuk pengambilan Intent
+        return new Intent(activity, tambahSiswa.class);
     }
 }
