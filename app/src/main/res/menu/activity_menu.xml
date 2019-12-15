@@ -7,7 +7,7 @@
         android:onClick="onComposeAction"
         app:showAsAction="ifRoom"
         android:title="Setting"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/whiteColor"
         >
     </item>
 </menu>

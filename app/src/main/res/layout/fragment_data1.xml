@@ -11,33 +11,54 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         tools:context=".activites.tambahSiswa">
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="Isilah Data Dengan Benar"
+            android:textSize="20dp"
+            android:textColor="@color/blackColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <RelativeLayout
             android:id="@+id/namaView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nama Panjang"
+            <ImageView
+                android:id="@+id/gambar1"
+                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:src="@drawable/name"
+                android:background="@color/warnaAnak"
+                android:paddingLeft="10dp"
                 />
 
             <EditText
                 android:id="@+id/nama_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </LinearLayout>
+                android:hint="Nama Lengkap"
+                android:background="@color/warnaAnak"
+                android:paddingLeft="20dp"
+                android:layout_alignBottom="@+id/gambar1"
+                android:layout_toRightOf="@+id/gambar1"
+                android:textColor="@color/whiteColor"
+                android:layout_alignParentTop="true"/>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/emailView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -47,21 +68,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/namaView">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email"
+            <ImageView
+                android:id="@+id/gambar2"
+                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:paddingLeft="10dp"
+                android:src="@drawable/email"
+                android:background="@color/warnaAnak"
                 />
 
             <EditText
                 android:id="@+id/email_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:hint="Email"
+                android:background="@color/warnaAnak"
+                android:paddingLeft="20dp"
+                android:layout_alignBottom="@+id/gambar2"
+                android:layout_toRightOf="@+id/gambar2"
+                android:textColor="@color/whiteColor"
+                android:layout_alignParentTop="true" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

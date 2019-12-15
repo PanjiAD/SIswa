@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/background"
     android:padding="10dip">
 
-    <TextView
-        android:id="@+id/namaSiswa"
+    <RelativeLayout
+        android:id="@+id/namaView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"/>
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/namaView">
 
+        <ImageView
+            android:id="@+id/gambar1"
+            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:src="@drawable/name"
+            android:background="@color/warnaAnak"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/namaSiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_gravity="left"
+            android:textSize="16sp"
+            android:background="@color/warnaAnak"
+            android:paddingLeft="20dp"
+            android:layout_alignBottom="@+id/gambar1"
+            android:layout_toRightOf="@+id/gambar1"
+            android:layout_alignParentTop="true"/>
+    </RelativeLayout>
 </LinearLayout>
