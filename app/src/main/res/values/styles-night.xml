@@ -3,8 +3,8 @@
     <!-- Base application theme. values-night.xml -->
     <style name="AppThemeDark" parent="Theme.AppCompat.DayNight">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/orange</item>
-        <item name="colorPrimaryDark">@color/orangeDark</item>
+        <item name="colorPrimary">#2ecc71</item>
+        <item name="colorPrimaryDark">#0E793B</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@android:color/white</item>
     </style>

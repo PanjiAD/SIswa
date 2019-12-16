@@ -65,21 +65,13 @@
         android:onClick="handleTambahData"
         android:text="Tambah data"
         app:layout_constraintHorizontal_bias="0.498"
+        android:background="@color/colorPrimary"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/features"
-        />
-
-    <TextView
-        android:id="@+id/TeksTambahData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="montserrat_light"
-        android:text="Tambah Data"
-        android:textColor="#313131"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tambahData"
         />
 
     <Button
@@ -88,23 +80,13 @@
         android:layout_height="wrap_content"
         android:onClick="handleLihatData"
         android:text="Lihat data"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TeksTambahData"
-        />
-
-
-
-    <TextView
-        android:id="@+id/TeksLihatData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="montserrat_light"
-        android:text="Lihat Data"
-        android:textColor="#313131"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lihatData"
+        app:layout_constraintTop_toBottomOf="@+id/tambahData"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
