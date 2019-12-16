@@ -28,7 +28,7 @@
             android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/btnPrimary"
+            android:background="@color/colorAccent"
             android:text="@string/next"
             android:textColor="@color/whiteColor"
             android:textStyle="bold"
