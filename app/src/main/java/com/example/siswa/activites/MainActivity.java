@@ -18,20 +18,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Membaca file menu dan menambahkan isinya ke action bar jika ada.
-        getMenuInflater().inflate(R.menu.activity_menu, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Membaca file menu dan menambahkan isinya ke action bar jika ada.
+//        getMenuInflater().inflate(R.menu.activity_menu, menu);
+//        return true;
+//    }
+//
+//    public void onComposeAction(MenuItem mi) {
+//        Intent intent = new Intent(this, SettingsActivity.class);
+//        startActivity(intent);
+//    }
 
-    public void onComposeAction(MenuItem mi) {
-        setContentView(R.layout.activity_setting);
-    }
     public void handleTambahData(View view) {
         Intent intent = new Intent(this, tambahSiswa.class);
         startActivity(intent);
@@ -44,5 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleExit(View view) {
         finish();
+    }
+
+    public void handleSetting(View view) {
+        Intent intent = new Intent(this, SettingActivity.class);
+        startActivity(intent);
     }
 }

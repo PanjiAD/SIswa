@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.siswa.activites.lihatSiswa;
@@ -40,10 +41,12 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
          * dan juga view nya hanyalah satu TextView
          */
         TextView tvTitle;
+        CardView crdView;
 
         ViewHolder(View v) {
             super(v);
             tvTitle = (TextView) v.findViewById(R.id.namaSiswa);
+            crdView = (CardView) v.findViewById(R.id.card_view);
         }
     }
 
@@ -65,7 +68,7 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
          */
         final String name = daftarSiswa.get(position).getNama();
         System.out.println("Siswa Data one by one "+position+daftarSiswa.size());
-        holder.tvTitle.setOnClickListener(new View.OnClickListener() {
+        holder.crdView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /**

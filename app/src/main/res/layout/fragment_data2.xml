@@ -41,7 +41,7 @@
                 android:layout_height="40dp"
                 android:layout_width="50dp"
                 android:src="@drawable/nisn1"
-                android:background="@color/warnaAnak"
+                android:background="@color/whiteColor"
                 android:paddingLeft="10dp"
                 />
 
@@ -51,11 +51,11 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned"
                 android:hint="Nisn"
-                android:background="@color/warnaAnak"
+                android:background="@color/whiteColor"
                 android:paddingLeft="20dp"
                 android:layout_alignBottom="@+id/gambar3"
                 android:layout_toRightOf="@+id/gambar3"
-                android:textColor="@color/whiteColor"
+                android:textColor="@color/blackColor"
                 android:layout_alignParentTop="true"/>
         </RelativeLayout>
 
@@ -74,7 +74,7 @@
                 android:layout_height="40dp"
                 android:layout_width="50dp"
                 android:src="@drawable/phone1"
-                android:background="@color/warnaAnak"
+                android:background="@color/whiteColor"
                 android:paddingLeft="10dp"
                 />
 
@@ -84,11 +84,11 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned"
                 android:hint="No Telepon"
-                android:background="@color/warnaAnak"
+                android:background="@color/whiteColor"
                 android:paddingLeft="20dp"
                 android:layout_alignBottom="@+id/gambar4"
                 android:layout_toRightOf="@+id/gambar4"
-                android:textColor="@color/whiteColor"
+                android:textColor="@color/blackColor"
                 android:layout_alignParentTop="true"/>
         </RelativeLayout>
 

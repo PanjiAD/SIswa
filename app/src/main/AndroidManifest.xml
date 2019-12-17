@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activites.lihat_detail_siswa"></activity>
+        <activity android:name=".activites.SettingActivity"></activity>
+        <activity android:name=".activites.lihat_detail_siswa" />
         <activity android:name=".activites.lihatSiswa" />
         <activity android:name=".activites.tambahSiswa" />
         <activity android:name=".activites.MainActivity" />
