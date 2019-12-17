@@ -43,7 +43,7 @@
                 android:id="@+id/gambar1"
                 android:layout_height="40dp"
                 android:layout_width="50dp"
-                android:src="@drawable/name1"
+                android:src="@drawable/name2"
                 android:background="@color/whiteColor"
                 android:paddingLeft="10dp"
                 />
@@ -76,7 +76,7 @@
                 android:layout_height="40dp"
                 android:layout_width="50dp"
                 android:paddingLeft="10dp"
-                android:src="@drawable/email1"
+                android:src="@drawable/email2"
                 android:background="@color/whiteColor"
                 />
 

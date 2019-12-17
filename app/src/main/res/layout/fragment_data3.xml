@@ -42,7 +42,7 @@
                 android:id="@+id/gambar5"
                 android:layout_height="120dp"
                 android:layout_width="50dp"
-                android:src="@drawable/address1"
+                android:src="@drawable/address2"
                 android:background="@color/whiteColor"
                 android:paddingLeft="10dp"
                 />
