@@ -4,15 +4,16 @@
     <color name="colorAccent">#f39c12</color>
 
     <color name="whiteColor">#fafafa</color>
-    <color name="blackColor">#1d1d1d</color>
-    <color name="grayColor">#979797</color>
+    <color name="blackColor">#2E2E2E</color>
+    <color name="grayColor">#9B9B9B</color>
+    <color name="greenColor">#B2BBB6</color>
 
     <color name="bgLight">#ecf0f1</color>
     <color name="bgDark">#2f3542</color>
 
     <color name="dangers">#ff4757</color>
     <color name="bgCard">#f5f6fa</color>
-    <color name="bgCardDark">#333338</color>
+    <color name="bgCardDark">#2E312F</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#EA9E9E9E</color>

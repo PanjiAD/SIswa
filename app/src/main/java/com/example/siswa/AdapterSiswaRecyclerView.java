@@ -41,11 +41,13 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
          * dan juga view nya hanyalah satu TextView
          */
         TextView tvTitle;
+        TextView tvSub;
         CardView crdView;
 
         ViewHolder(View v) {
             super(v);
             tvTitle = (TextView) v.findViewById(R.id.namaSiswa);
+            tvSub= (TextView) v.findViewById(R.id.nisnSiswa);
             crdView = (CardView) v.findViewById(R.id.card_view);
         }
     }
@@ -67,6 +69,7 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
          *  Menampilkan data pada view
          */
         final String name = daftarSiswa.get(position).getNama();
+        final String nisn = daftarSiswa.get(position).getNisn();
         System.out.println("Siswa Data one by one "+position+daftarSiswa.size());
         holder.crdView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +80,7 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
                 context.startActivity(lihat_detail_siswa.getActIntent((Activity) context).putExtra("dataSiswa", daftarSiswa.get(position)));
             }
         });
-        holder.tvTitle.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.crdView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 /**
@@ -116,6 +119,7 @@ public class AdapterSiswaRecyclerView extends RecyclerView.Adapter<AdapterSiswaR
             }
         });
         holder.tvTitle.setText(name);
+        holder.tvSub.setText(nisn);
     }
 
     @Override
