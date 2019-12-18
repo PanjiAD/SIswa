@@ -14,18 +14,6 @@
         android:background="?android:windowBackground"
         tools:context=".activites.tambahSiswa">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:text="Isi Data Dengan Benar"
-            android:textSize="20dp"
-            android:textColor="?attr/fontPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
         <RelativeLayout
             android:id="@+id/nisnView"
             android:layout_width="0dp"
@@ -51,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned"
                 android:hint="Nisn"
+                android:textColorHint="@color/colorHintDark"
                 android:background="@color/whiteColor"
                 android:paddingLeft="20dp"
                 android:layout_alignBottom="@+id/gambar3"
@@ -84,6 +73,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned"
                 android:hint="No Telepon"
+                android:textColorHint="@color/colorHintDark"
                 android:background="@color/whiteColor"
                 android:paddingLeft="20dp"
                 android:layout_alignBottom="@+id/gambar4"

@@ -15,6 +15,7 @@
         <item name="bgCard">@color/bgCard</item>
         <item name="fontPrimary">@color/blackColor</item>
         <item name="fontSecondary">@color/grayColor</item>
+        <item name="colorHint">@color/colorHint</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

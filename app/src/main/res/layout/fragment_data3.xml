@@ -55,6 +55,7 @@
                 android:gravity="left"
                 android:inputType="textMultiLine"
                 android:hint="Alamat"
+                android:textColorHint="@color/colorHintDark"
                 android:background="@color/whiteColor"
                 android:paddingLeft="20dp"
                 android:layout_alignBottom="@+id/gambar5"
