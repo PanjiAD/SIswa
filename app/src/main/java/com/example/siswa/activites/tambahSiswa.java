@@ -9,6 +9,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -47,6 +48,13 @@ public class tambahSiswa extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
+
+        if (useDarkMode) {
+            setTheme(R.style.ActivityThemeDark);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_siswa);
 
@@ -112,6 +120,9 @@ public class tambahSiswa extends AppCompatActivity {
     }
 
     private void updateData(Siswa siswa){
+        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        final boolean useNotif = preferences.getBoolean("NOTIFICATION", false);
+
         namaStr = namaInput.getText().toString();
         emailStr = emailInput.getText().toString();
         nisnStr = nisnInput.getText().toString();
@@ -135,11 +146,12 @@ public class tambahSiswa extends AppCompatActivity {
                     .addOnSuccessListener(this, new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            /**
-                             * Baris kode yang akan dipanggil apabila proses update barang sukses
-                             */
-                            NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-                            nm.notify(0, builder.build());
+
+                            if (useNotif){
+                                NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+                                nm.notify(0, builder.build());
+                            }
+                            System.out.println("Data Berhasil DiTambahkan");
                         }
                     });
         }
@@ -150,6 +162,9 @@ public class tambahSiswa extends AppCompatActivity {
     }
 
     private void addData(){
+        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        final boolean useNotif = preferences.getBoolean("NOTIFICATION", false);
+
         namaStr = namaInput.getText().toString();
         emailStr = emailInput.getText().toString();
         nisnStr = nisnInput.getText().toString();
@@ -173,9 +188,11 @@ public class tambahSiswa extends AppCompatActivity {
                 @Override
                 public void onSuccess(Void aVoid) {
 
-                    NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-                    nm.notify(0, builder.build());
-
+                    if (useNotif){
+                        NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+                        nm.notify(0, builder.build());
+                    }
+                    System.out.println("Data Berhasil DiTambahkan");
                 }
             });
         }

@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#2ecc71</color>
-    <color name="colorPrimaryDark">#0E793B</color>
     <color name="colorAccent">#f39c12</color>
-<!--    <color name="btnPrimary">#f39c12</color>-->
+
     <color name="whiteColor">#fafafa</color>
     <color name="blackColor">#1d1d1d</color>
-    <color name="background">#ecf0f1</color>
-    <color name="dangers">#ff4757</color>
-    <color name="warnaAnak">#336e7b</color>
-    <color name="daynight_textColor">#6cbabb</color>
-    <color name="switchColor">#911dee</color>
+    <color name="grayColor">#979797</color>
 
-    <!--dark-->
-<!--    <color name="orange">#ff8200</color>-->
-<!--    <color name="orangeDark">#ff8200</color>-->
-    <color name="daynight_textColorDark">#ff8222</color>
-    <color name="switchColorDark">#bc2f1d</color>
-    <!--tutup dark-->
+    <color name="bgLight">#ecf0f1</color>
+    <color name="bgDark">#2f3542</color>
+
+    <color name="dangers">#ff4757</color>
+    <color name="bgCard">#f5f6fa</color>
+    <color name="bgCardDark">#333338</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#EA9E9E9E</color>

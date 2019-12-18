@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="bgColor" format="color"/>
-    <attr name="textColor" format="color"/>
-    <attr name="metaTextColor" format="color"/>
+    <declare-styleable name="CTAppTheme">
+        <attr name="bgColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="metaTextColor" format="color"/>
+        <attr name="bgCard" format="color"/>
+        <attr name="fontPrimary" format="color"/>
+        <attr name="fontSecondary" format="color"/>
+    </declare-styleable>
 </resources>

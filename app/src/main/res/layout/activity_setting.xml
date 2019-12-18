@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@color/background">
+    android:background="?android:windowBackground"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/header"
@@ -45,7 +45,6 @@
         android:id="@+id/darkMode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:checked="true"
         android:text="Dark Mode"
         android:layout_centerHorizontal="true"
         android:textOn="On"
@@ -60,7 +59,6 @@
         android:id="@+id/notification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:checked="true"
         android:text="Notifikasi"
         android:layout_centerHorizontal="true"
         android:textOn="On"

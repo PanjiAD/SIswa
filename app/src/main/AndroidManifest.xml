@@ -8,7 +8,7 @@
         android:label="Siswa"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/ActivityThemeLight">
         <activity android:name=".activites.SettingActivity"></activity>
         <activity android:name=".activites.lihat_detail_siswa" />
         <activity android:name=".activites.lihatSiswa" />

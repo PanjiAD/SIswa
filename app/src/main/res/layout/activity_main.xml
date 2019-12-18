@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@color/background">
+    android:background="?android:windowBackground">
 
 <LinearLayout
     android:id="@+id/header"
@@ -73,7 +72,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="montserrat_semi_bold"
             android:text="Welcome to Siswa App"
-            android:textColor="#313131"
+            android:textColor="?attr/fontPrimary"
+            android:textStyle="bold"
             android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="montserrat_light"
             android:text="Sistem Informasinya Siswa Masa Kini"
-            android:textColor="#313131"
+            android:textColor="?attr/fontPrimary"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/welcome_text"
@@ -99,7 +99,7 @@
             android:layout_marginTop="28dp"
             android:fontFamily="montserrat_semi_bold"
             android:text="Our Features"
-            android:textColor="#313131"
+            android:textColor="?attr/fontPrimary"
             android:textSize="20dp"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -125,6 +125,7 @@
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:onClick="handleTambahData"
+            android:background="#f5f6fa"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/features"
@@ -143,7 +144,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Tambah Data"/>
+                    android:text="Tambah Data"
+                    android:textColor="?attr/fontPrimary"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -155,7 +157,7 @@
                     android:gravity="center"
                     android:text="Tambah informasi diri anda"
                     android:padding="5dp"
-                    android:textColor="@android:color/darker_gray"/>
+                    android:textColor="?attr/fontSecondary"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -167,6 +169,7 @@
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:onClick="handleLihatData"
+            android:background="#f5f6fa"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tambahData"
@@ -185,7 +188,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Lihat Data"/>
+                    android:text="Lihat Data"
+                    android:textColor="?attr/fontPrimary"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -197,7 +201,7 @@
                     android:gravity="center"
                     android:text="Lihat Data Semua Siswa"
                     android:padding="10dp"
-                    android:textColor="@android:color/darker_gray"/>
+                    android:textColor="?attr/fontSecondary"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

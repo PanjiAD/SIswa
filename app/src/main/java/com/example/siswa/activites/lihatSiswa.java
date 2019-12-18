@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -32,6 +33,13 @@ public class lihatSiswa extends AppCompatActivity implements AdapterSiswaRecycle
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
+
+        if (useDarkMode) {
+            setTheme(R.style.ActivityThemeDark);
+        }
+
         super.onCreate(savedInstanceState);
         /**
          * Mengeset layout
