@@ -75,6 +75,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     public void handleExit(View view) {
-        finish();
+        finishAffinity();
+        System.exit(0);
     }
 }

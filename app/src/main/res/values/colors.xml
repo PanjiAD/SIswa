@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#2ecc71</color>
     <color name="colorAccent">#f39c12</color>
-    <color name="colorHintDark">#B6B6B6</color>
-    <color name="colorHint">#6F6F6F</color>
+    <color name="colorHintDark">#222f3e</color>
+    <color name="colorHint">#c8d6e5</color>
 
     <color name="whiteColor">#fafafa</color>
     <color name="blackColor">#2E2E2E</color>
@@ -11,11 +11,11 @@
     <color name="greenColor">#B2BBB6</color>
 
     <color name="bgLight">#ecf0f1</color>
-    <color name="bgDark">#2f3542</color>
+    <color name="bgDark">#15191A</color>
 
     <color name="dangers">#ff4757</color>
     <color name="bgCard">#f5f6fa</color>
-    <color name="bgCardDark">#2E312F</color>
+    <color name="bgCardDark">#232929</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#EA9E9E9E</color>

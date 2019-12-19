@@ -14,73 +14,70 @@
         android:background="?android:windowBackground"
         tools:context=".activites.tambahSiswa">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/nisnView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="6"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <ImageView
                 android:id="@+id/gambar3"
-                android:layout_height="40dp"
-                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_width="40dp"
                 android:src="@drawable/nisn3"
-                android:background="@color/whiteColor"
-                android:paddingLeft="10dp"
-                />
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/nisn_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="left"
                 android:inputType="numberSigned"
-                android:hint="Nisn"
-                android:textColorHint="@color/colorHintDark"
-                android:background="@color/whiteColor"
-                android:paddingLeft="20dp"
-                android:layout_alignBottom="@+id/gambar3"
-                android:layout_toRightOf="@+id/gambar3"
-                android:textColor="@color/blackColor"
-                android:layout_alignParentTop="true"/>
-        </RelativeLayout>
+                android:hint="NISN"
+                android:layout_marginLeft="15dp"
+                android:textColorHint="?attr/colorHint"
+                android:textColor="?attr/colorHint"
+                android:layout_weight="5"/>
 
-        <RelativeLayout
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/hpView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="6"
+            android:layout_marginTop="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nisnView">
 
             <ImageView
                 android:id="@+id/gambar4"
-                android:layout_height="40dp"
-                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_width="40dp"
                 android:src="@drawable/phone2"
-                android:background="@color/whiteColor"
-                android:paddingLeft="10dp"
-                />
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
 
             <EditText
                 android:id="@+id/hp_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="left"
                 android:inputType="numberSigned"
                 android:hint="No Telepon"
-                android:textColorHint="@color/colorHintDark"
-                android:background="@color/whiteColor"
-                android:paddingLeft="20dp"
-                android:layout_alignBottom="@+id/gambar4"
-                android:layout_toRightOf="@+id/gambar4"
-                android:textColor="@color/blackColor"
-                android:layout_alignParentTop="true"/>
-        </RelativeLayout>
+                android:layout_marginLeft="15dp"
+                android:textColorHint="?attr/colorHint"
+                android:textColor="?attr/colorHint"
+                android:layout_weight="5"/>
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
