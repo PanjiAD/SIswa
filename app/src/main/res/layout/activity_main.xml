@@ -138,12 +138,12 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/add"
-                    android:padding="10dp"/>
+                    android:background="@drawable/add"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:layout_marginTop="10dp"
                     android:text="Tambah Data"
                     android:textColor="?attr/fontPrimary"/>
                 <View
@@ -182,13 +182,13 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/show"
-                    android:padding="10dp"/>
+                    android:background="@drawable/show"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="Lihat Data"
+                    android:layout_marginTop="10dp"
                     android:textColor="?attr/fontPrimary"/>
                 <View
                     android:layout_width="match_parent"
@@ -200,7 +200,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Lihat Data Semua Siswa"
-                    android:padding="10dp"
+                    android:padding="6dp"
                     android:textColor="?attr/fontSecondary"/>
 
             </LinearLayout>
