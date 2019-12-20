@@ -8,5 +8,11 @@
         <attr name="fontPrimary" format="color"/>
         <attr name="fontSecondary" format="color"/>
         <attr name="colorHint" format="color"/>
+        <attr name="iconDark" format="integer"/>
+        <attr name="iconLight" format="integer"/>
+        <attr name="iconDarkEmail" format="integer"/>
+        <attr name="iconDarkNisn" format="integer"/>
+        <attr name="iconDarkPhone" format="integer"/>
+        <attr name="iconDarkAddress" format="integer"/>
     </declare-styleable>
 </resources>

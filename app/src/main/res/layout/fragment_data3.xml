@@ -43,9 +43,9 @@
                 android:id="@+id/gambar5"
                 android:layout_height="40dp"
                 android:layout_width="40dp"
-                android:src="@drawable/address2"
                 android:paddingLeft="10dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="?attr/iconDarkAddress"/>
 
             <EditText
                 android:id="@+id/alamat_text"

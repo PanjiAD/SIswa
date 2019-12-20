@@ -43,9 +43,9 @@
                 android:id="@+id/gambar1"
                 android:layout_height="30dp"
                 android:layout_width="40dp"
-                android:src="@drawable/name2"
                 android:layout_gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="?attr/iconDark"/>
 
             <EditText
                 android:id="@+id/nama_text"
@@ -76,9 +76,9 @@
                 android:id="@+id/gambar2"
                 android:layout_height="30dp"
                 android:layout_width="40dp"
-                android:src="@drawable/email2"
                 android:layout_gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:src="?attr/iconDarkEmail"/>
 
             <EditText
                 android:id="@+id/email_text"

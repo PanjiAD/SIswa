@@ -16,6 +16,11 @@
         <item name="fontPrimary">@color/blackColor</item>
         <item name="fontSecondary">@color/grayColor</item>
         <item name="colorHint">@color/colorHintDark</item>
+        <item name="iconDark">@drawable/name2</item>
+        <item name="iconDarkEmail">@drawable/email2</item>
+        <item name="iconDarkNisn">@drawable/nisn3</item>
+        <item name="iconDarkPhone">@drawable/phone2</item>
+        <item name="iconDarkAddress">@drawable/address2</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -28,6 +33,11 @@
         <item name="fontPrimary">@color/whiteColor</item>
         <item name="fontSecondary">@color/greenColor</item>
         <item name="colorHint">@color/colorHint</item>
+        <item name="iconDark">@drawable/name3</item>
+        <item name="iconDarkEmail">@drawable/email3</item>
+        <item name="iconDarkNisn">@drawable/nisn4</item>
+        <item name="iconDarkPhone">@drawable/phone3</item>
+        <item name="iconDarkAddress">@drawable/address3</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

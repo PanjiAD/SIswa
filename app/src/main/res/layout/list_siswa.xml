@@ -32,7 +32,7 @@ android:tag="cards main container">
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:src="@drawable/name2"/>
+            android:src="?attr/iconDark"/>
 
         <LinearLayout
             android:layout_width="0dp"
